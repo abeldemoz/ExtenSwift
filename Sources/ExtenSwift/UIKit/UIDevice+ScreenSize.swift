@@ -55,17 +55,9 @@ public extension UIDevice {
         public static let is6Point7Inches = ScreenSize.widthInPoints == 428.0 && ScreenSize.heightInPoints == 926.0
     }
 
+    static let isIphone = UIDevice.current.userInterfaceIdiom == .phone
     static let isIphoneWithNotch = UIDevice.current.userInterfaceIdiom == .phone && (UIApplication.shared.keyWindow?.safeAreaInsets.bottom ?? 0) > 0
     static let isIpad: Bool = UIDevice.current.userInterfaceIdiom == .pad
     static let isIpadMini: Bool = isIpad && ScreenSize.widthInPoints <= 768
-
-
-
-    // MARK: - Deprecated Properties
-    // These properties are deprecated. Use the preferred properties above going forward.
-    static let isIPhone5OrLess = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.maxLength <= 568.0
-    static let isIPhone8OrSmaller = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.widthInPoints <= 375
-    static let doesIPhoneHaveNotch = (UIApplication.shared.keyWindow?.safeAreaInsets.bottom ?? 0) > 0
-    static let isIPhone8OrSmallerWithoutNotch = isIPhone8OrSmaller && !doesIPhoneHaveNotch
 }
 #endif
