@@ -1,6 +1,7 @@
 #if !os(macOS)
 import UIKit
 
+@available(tvOS 11.0, *)
 @available(iOS 11.0, *)
 public extension UIView {
 
