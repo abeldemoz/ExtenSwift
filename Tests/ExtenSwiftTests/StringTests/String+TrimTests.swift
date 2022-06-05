@@ -3,75 +3,77 @@ import XCTest
 
 final class StringTrimTests: XCTestCase {
 
+    private var testString: String!
+
     // MARK: - Test trim
     func test_trim_removesLeadingAndTrailingWhiteSpace() throws {
-        var testString = " abcd "
+        testString = " abcd "
         XCTAssertEqual("abcd", testString.trim())
     }
 
     func test_trim_removesLeadingWhiteSpace() throws {
-        var testString = " abcd"
+        testString = " abcd"
         XCTAssertEqual("abcd", testString.trim())
     }
 
     func test_trim_removesTrailingWhiteSpace() throws {
-        var testString = "abcd "
+        testString = "abcd "
         XCTAssertEqual("abcd", testString.trim())
     }
 
     func test_trim_removesAllWhiteSpace() throws {
-        var testString = "     "
+        testString = "     "
         XCTAssertEqual("", testString.trim())
     }
 
     func test_trim_removesLeadingAndTrailingNewLines() throws {
-        var testString = "\nabcdefg\n"
+        testString = "\nabcdefg\n"
         XCTAssertEqual("abcdefg", testString.trim())
     }
 
     func test_trim_removesLeadingNewLines() throws {
-        var testString = "\nabcdefg"
+        testString = "\nabcdefg"
         XCTAssertEqual("abcdefg", testString.trim())
     }
 
     func test_trim_removesTrailingNewLines() throws {
-        var testString = "abcdefg\n"
+        testString = "abcdefg\n"
         XCTAssertEqual("abcdefg", testString.trim())
     }
 
     func test_trim_removesAllNewLines() {
-        var testString = "\n\n\n\n"
+        testString = "\n\n\n\n"
         XCTAssertEqual("", testString.trim())
     }
 
     func test_trim_removesNothing_whenInputIsEmpty() {
-        var testString = ""
+        testString = ""
         XCTAssertEqual("", testString.trim())
     }
 
     // MARK: - Test trimmed
     func test_trimmed_removesLeadingAndTrailingWhiteSpace() throws {
-        let testString = " abcd "
+        testString = " abcd "
         XCTAssertEqual("abcd", testString.trimmed)
     }
 
     func test_trimmed_removesLeadingWhiteSpace() throws {
-        let testString = " abcd"
+        testString = " abcd"
         XCTAssertEqual("abcd", testString.trimmed)
     }
 
     func test_trimmed_removesTrailingWhiteSpace() throws {
-        let testString = "abcd "
+        testString = "abcd "
         XCTAssertEqual("abcd", testString.trimmed)
     }
 
     func test_trimmed_removesAllWhiteSpace() throws {
-        let testString = "     "
+        testString = "     "
         XCTAssertEqual("", testString.trimmed)
     }
 
     func test_trimmed_removesLeadingAndTrailingNewLines() throws {
-        let testString = "\nabcdefg\n"
+        testString = "\nabcdefg\n"
         XCTAssertEqual("abcdefg", testString.trimmed)
     }
 
@@ -81,17 +83,17 @@ final class StringTrimTests: XCTestCase {
     }
 
     func test_trimmed_removesTrailingNewLines() throws {
-        let testString = "abcdefg\n"
+        testString = "abcdefg\n"
         XCTAssertEqual("abcdefg", testString.trimmed)
     }
 
     func test_trimmed_removesAllNewLines() {
-        let testString = "\n\n\n\n"
+        testString = "\n\n\n\n"
         XCTAssertEqual("", testString.trimmed)
     }
 
     func test_trimmed_removesNothing_whenInputIsEmpty() {
-        let testString = ""
+        testString = ""
         XCTAssertEqual("", testString.trimmed)
     }
 }

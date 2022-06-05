@@ -3,51 +3,53 @@ import XCTest
 
 final class StringAlphanumeric: XCTestCase {
 
+    private var testString: String!
+
     // MARK: - Test isAlphanumeric
     func test_isAlphanumeric_returnsTrue_whenInputContainsOnlyLetters() throws {
-        let someString = "abc"
-        XCTAssertEqual(someString.isAlphanumeric, true)
+        testString = "abc"
+        XCTAssertEqual(testString.isAlphanumeric, true)
     }
 
     func test_isAlphanumeric_returnsTrue_whenInputContainsOnlyNumbers() throws {
-        let someString = "123"
-        XCTAssertEqual(someString.isAlphanumeric, true)
+        testString = "123"
+        XCTAssertEqual(testString.isAlphanumeric, true)
     }
 
     func test_isAlphanumeric_returnsTrue_whenInputContainsLettersAndNumbers() throws {
-        let someString = "abc123"
-        XCTAssertEqual(someString.isAlphanumeric, true)
+        testString = "abc123"
+        XCTAssertEqual(testString.isAlphanumeric, true)
     }
 
     func test_isAlphanumeric_returnsFalse_whenInputContainsSpecialCharacters() throws {
-        let someString = "abc123+$%^"
-        XCTAssertEqual(someString.isAlphanumeric, false)
+        testString = "abc123+$%^"
+        XCTAssertEqual(testString.isAlphanumeric, false)
     }
 
     func test_isAlphanumeric_returnsFalse_whenInputIsEmpty() throws {
-        let someString = ""
-        XCTAssertEqual(someString.isAlphanumeric, false)
+        testString = ""
+        XCTAssertEqual(testString.isAlphanumeric, false)
     }
 
     func test_isAlphanumeric_returnsFalse_whenInputContainsOnlySpecialCharacters() throws {
-        let someString = "+$%^"
-        XCTAssertEqual(someString.isAlphanumeric, false)
+        testString = "+$%^"
+        XCTAssertEqual(testString.isAlphanumeric, false)
     }
 
     // MARK: - Test containsOnlyDigits
     func test_containsOnlyDigits_returnsTrue_whenInputContainsOnlyDigits() throws {
-        let someString = "123"
-        XCTAssertEqual(someString.containsOnlyDigits, true)
+        testString = "123"
+        XCTAssertEqual(testString.containsOnlyDigits, true)
     }
 
     func test_containsOnlyDigits_returnsFalse_whenInputContainsOnlyLetters() throws {
-        let someString = "abc"
-        XCTAssertEqual(someString.containsOnlyDigits, false)
+        testString = "abc"
+        XCTAssertEqual(testString.containsOnlyDigits, false)
     }
 
     func test_containsOnlyDigits_returnsFalse_whenInputIsEmpty() throws {
-        let someString = ""
-        XCTAssertEqual(someString.containsOnlyDigits, false)
+        testString = ""
+        XCTAssertEqual(testString.containsOnlyDigits, false)
     }
 
 
